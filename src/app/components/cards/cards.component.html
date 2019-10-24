@@ -1,0 +1,58 @@
+
+<div *ngIf="buscar===true || popular===true">
+<div *ngIf="buscar===true" class="title text-center">
+    <h1>Popular movies</h1>
+  </div>
+
+<div class="card-columns">
+  <div *ngFor="let movie of movies" class="card crd">
+    <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+      <p class="card-text">{{movie.overview}}</p>
+      <button class="btn btn-dark">More info</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div *ngIf="buscar===true || actual===true">
+
+<div class="title text-center">
+  <h1>Actual</h1>
+</div>
+
+
+<div class="card-columns">
+ 
+  <div *ngFor="let actualMovie of actualMovies" class="card crd">
+    <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{actualMovie.poster_path}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{actualMovie.title}}</h5>
+      <p class="card-text">{{actualMovie.overview}}</p>
+      <button class="btn btn-dark">More info</button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div *ngIf="buscar===true || actual===false">
+<div class="title text-center">
+  <h1>Kids</h1>
+</div>
+
+
+<div class="card-columns">
+ 
+  <div *ngFor="let kidsMovie of kidsMovies" class="card crd">
+    <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{kidsMovie.poster_path}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{kidsMovie.title}}</h5>
+      <p class="card-text">{{kidsMovie.overview}}</p>
+      <button class="btn btn-dark">More info</button>
+    </div>
+  </div>
+</div>
+</div>

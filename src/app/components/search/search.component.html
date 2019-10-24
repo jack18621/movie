@@ -1,0 +1,37 @@
+
+
+
+        <div class="title text-center">
+           <h1>All Movies</h1>
+        </div>
+
+        
+            
+                <input  type="text" #termino (keyup.enter)="search(termino.value)" routerLinkActive="router-link-active"    class="form-control md-5" placeholder="Search Movie">
+            
+    
+<div class="cont pt-1">
+        <div class="item">
+                <div *ngFor="let move of mov; let i = index">
+                        <div *ngIf="buscar===true" class="title text-center">
+                                        <h1>{{names[i]}}</h1>
+                                      </div>
+                                    
+                                    <div class="card-columns">
+                                      <div *ngFor="let movie of mov[i]" class="card crd">
+                                        <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" alt="Card image cap">
+                                        <div class="card-body">
+                                          <h5 class="card-title">{{movie.title}}</h5>
+                                          <p class="card-text">{{movie.overview}}</p>
+                                          <button class="btn btn-dark">More info</button>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div *ngIf="mov[i].length === 0" class="alert alert-success">No hay resultados en esta categoria</div>
+     
+                  </div>
+</div>
+
+
+     </div>

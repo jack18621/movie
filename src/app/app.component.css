@@ -1,0 +1,25 @@
+
+.cont{
+    display:grid;
+    grid-template: 100%/20% 80%;
+    grid-template-areas: "navbar home";
+    height: 656px;                    
+}
+
+
+
+.navbar{
+    grid-area: navbar;
+    
+}
+
+.home{
+    grid-area: home;
+    background-color:#9a9a9a;
+    color:white;
+  
+}
+
+hr{
+    color: lightgray
+}

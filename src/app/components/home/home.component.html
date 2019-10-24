@@ -1,0 +1,18 @@
+<div class="title text-center">
+        <img src="../../../assets/cinema.png" height="70px" width="" alt="">
+        <h2>Enjoy this world!</h2>
+     </div>
+     
+     
+     <div class="container text-center">
+        <div onclick="ruta(i)" style="cursor:pointer" *ngFor="let variable of display.variables; let i = index" class="item variable">
+            <h3>{{display.names[i]}}</h3>
+            <img  src="http://image.tmdb.org/t/p/w300{{display.services[i][i].poster_path}}" height="300px" alt="">
+            <br>
+            <small>Descripción</small>
+            <br>
+            <p>{{display.messages[i]}}</p>
+
+        </div>
+     </div>
+     
