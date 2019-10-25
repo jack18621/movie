@@ -56,6 +56,24 @@ export class MovieService {
   
 
   }
+
+  getMovie(id, index){
+
+    let movieArr=[];
+    let movieArr2=[];
+   this.array[index].subscribe(data=>{
+    movieArr=data.results;
+  
+    for(let movie of movieArr){
+      console.log(id);
+      if (movie.id==id){
+        movieArr2.push(movie)
+      }
+    }
+   })
+
+   return movieArr2
+  }
 /* 
 
   searchActual(termino:string){

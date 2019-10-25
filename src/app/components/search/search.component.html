@@ -18,7 +18,7 @@
                                       </div>
                                     
                                     <div class="card-columns">
-                                      <div *ngFor="let movie of mov[i]" class="card crd">
+                                      <div [routerLink]="['/movie', i , movie.id]" style="cursor: pointer"  *ngFor="let movie of mov[i]" class="card crd">
                                         <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" alt="Card image cap">
                                         <div class="card-body">
                                           <h5 class="card-title">{{movie.title}}</h5>

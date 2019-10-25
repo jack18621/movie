@@ -1,0 +1,32 @@
+<div *ngIf="!loading" class="card text-center">
+    <div class="card-header">
+      {{movie[0].title}}
+      <hr color="gray">
+    </div>
+    <h4 class="card-title">{{movie[0].title}}</h4>
+   
+    <div class="card-body">
+   
+      <div class="flex">
+        <div class="content">
+          <p> Vote average {{movie[0].vote_average}}</p>
+          <p> Popularity: {{movie[0].popularity}}</p>
+          <p> Vote count: {{movie[0].vote_count}}</p>
+          <p> Original Language: {{movie[0].original_language}}</p>
+        </div>
+   
+        <img class="" src="http://image.tmdb.org/t/p/w300{{movie[0].poster_path}}" height="250px"  alt="">
+        
+      <div class="small text-left">
+      <p class="card-text"> {{movie[0].overview}}</p>
+      <a [routerLink]="['/search','']" class="btn btn-danger">Go back</a>
+    </div>
+
+    </div>
+    </div>
+    <div class="card-footer text-muted">
+        {{movie[0].release_date}} <p> Original Language: {{movie[0].original_language}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="loading">Cargando</div>

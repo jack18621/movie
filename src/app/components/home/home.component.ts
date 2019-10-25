@@ -13,6 +13,7 @@ export class HomeComponent {
   movies=[]
   actualMovies=[]
   kidsMovies=[]
+  variables=["popular", "actual", "kids"]
   display={
       names:["Popular Movies", "Actual Movies", "Kids Movies"],
       variables:["popular", "actual", "kids"],
@@ -24,19 +25,19 @@ export class HomeComponent {
     constructor(private movieService: MovieService, private router: Router) { 
       
      this.movieService.getPopulares().subscribe(data=>{
-      this.display.services.push(this.movies=data.results)
+      this.display.services.splice(0,0,this.movies=data.results)
         
       })
      
       
   
       this.movieService.getActual().subscribe(data=>{
-        this.display.services.push(this.actualMovies=data.results)
+        this.display.services.splice(1,0,this.actualMovies=data.results)
         
       })
   
       this.movieService.getKids().subscribe(data=>{
-        this.display.services.push(this.kidsMovies=data.results)
+        this.display.services.splice(2,0,this.kidsMovies=data.results)
         
       })
       console.log(this.display);

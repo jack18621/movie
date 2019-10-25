@@ -1,9 +1,11 @@
 
 .cont{
     display:grid;
-    grid-template: 100%/20% 80%;
+    grid-template: 100%/20% 80% minmax(10px, 1fr);
     grid-template-areas: "navbar home";
-    height: 656px;                    
+    min-width:1fr ;
+    height: 656px;  
+    max-height: 100%                  
 }
 
 

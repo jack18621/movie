@@ -11,18 +11,25 @@ export class CardsComponent implements OnInit {
 movies=[];
 actualMovies=[];
 kidsMovies=[];
+loading=true;
 
 @Input() buscar:boolean;
 @Input() actual:boolean;
 @Input() popular:boolean;
   constructor(private movieService: MovieService) { 
+  this.loading=true;
+
     this.movieService.getPopulares().subscribe(data=>{
       this.movies=data.results
+      
+      this.loading=false;
+
       
     })
 
     this.movieService.getActual().subscribe(data=>{
       this.actualMovies=data.results
+      this.loading=false;
       
     })
 

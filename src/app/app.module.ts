@@ -13,6 +13,8 @@ import { RouterModule, ROUTES } from '@angular/router';
 import {  app_routing } from './app-routing.module';
 import { PopularComponent } from './components/popular/popular.component';
 import { ActualComponent } from './components/actual/actual.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ActualComponent } from './components/actual/actual.component';
     CardsComponent,
     ContentComponent,
     PopularComponent,
-    ActualComponent
+    ActualComponent,
+    MovieComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,

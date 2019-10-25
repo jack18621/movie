@@ -5,7 +5,7 @@
      
      
      <div class="container text-center">
-        <div onclick="ruta(i)" style="cursor:pointer" *ngFor="let variable of display.variables; let i = index" class="item variable">
+        <div [routerLink]="['/search', '']" style="cursor:pointer"  *ngFor="let variable of display.variables; let i = index" class="item variable">
             <h3>{{display.names[i]}}</h3>
             <img  src="http://image.tmdb.org/t/p/w300{{display.services[i][i].poster_path}}" height="300px" alt="">
             <br>

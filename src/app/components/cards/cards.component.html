@@ -4,29 +4,30 @@
     <h1>Popular movies</h1>
   </div>
 
-<div class="card-columns">
-  <div *ngFor="let movie of movies" class="card crd">
-    <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" alt="Card image cap">
+<div *ngIf="!loading" class="card-columns">
+  <div  [routerLink]="['/movie', 0 , movie.id]" style="cursor: pointer" *ngFor="let movie of movies" class="card crd">
+    <img class="card-img-top img-fluid" src="http://image.tmdb.org/t/p/w300{{movie.backdrop_path}}"  alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{movie.title}}</h5>
       <p class="card-text">{{movie.overview}}</p>
-      <button class="btn btn-dark">More info</button>
+      <button class="btn btn-dark ">More info</button>
     </div>
   </div>
 </div>
 </div>
+<div *ngIf="loading">cargando</div>
 
 
 <div *ngIf="buscar===true || actual===true">
 
 <div class="title text-center">
-  <h1>Actual</h1>
+  <h1>In cinemas</h1>
 </div>
 
 
-<div class="card-columns">
+<div *ngIf="!loading" class="card-columns">
  
-  <div *ngFor="let actualMovie of actualMovies" class="card crd">
+  <div [routerLink]="['/movie', 1 , actualMovie.id]" style="cursor: pointer" *ngFor="let actualMovie of actualMovies" class="card crd">
     <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{actualMovie.poster_path}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{actualMovie.title}}</h5>
@@ -37,6 +38,8 @@
 </div>
 </div>
 
+<div *ngIf="loading">cargando</div>
+
 
 <div *ngIf="buscar===true || actual===false">
 <div class="title text-center">
@@ -44,9 +47,9 @@
 </div>
 
 
-<div class="card-columns">
+<div  class="card-columns">
  
-  <div *ngFor="let kidsMovie of kidsMovies" class="card crd">
+  <div  style="cursor: pointer" *ngFor="let kidsMovie of kidsMovies" class="card crd">
     <img class="card-img-top" src="http://image.tmdb.org/t/p/w300{{kidsMovie.poster_path}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{kidsMovie.title}}</h5>
